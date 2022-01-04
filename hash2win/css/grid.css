@@ -1,0 +1,79 @@
+/* Grid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.global_wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0.50%;
+  background-color: #fff;
+  color: #444;
+}
+.Monster_wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0.50%;
+  background-color: #fff;
+  color: #444;
+}
+
+/* For small screens */
+.span1,.span2,.span3,.span4,.span5,.span6,.spanAll{
+  grid-column-end: span 6;
+}
+
+
+
+/* For large screens */
+@media (min-width: 720px){
+  .span1{
+    grid-column-end: span 1;
+  }
+  .span2{
+    grid-column-end: span 2;
+  }
+  .span3{
+    grid-column-end: span 3;
+  }
+  .span4{
+    grid-column-end: span 4;
+  }
+  .span5{
+    grid-column-end: span 5;
+  }
+  .span6{
+    grid-column-end: span 6;
+  }
+}
+
+.box{
+
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.gridMonster{
+  text-align: center;
+  background-color : rgba(125, 125, 125, 0.5);
+}
+
+.gridClicker{
+  text-align: center;
+  background-color : rgba(255, 150, 100, 0.5);
+}
+
+
+.gridMashgicien{
+  text-align: center;
+  background-color : rgba(0, 191, 255, 0.5);
+}
+
+.gridinvoK{
+    text-align: center;
+    background-color : rgba(222, 184, 140, 0.7);
+}
+
+.griditem{
+  text-align: center;
+  max-width: 20px;
+  max-height: 20px;
+}

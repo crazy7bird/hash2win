@@ -1,0 +1,88 @@
+body{
+    letter-spacing: -1px;
+    margin: auto;
+}
+
+
+.monster{
+    background-image: url('../img/zones/Plain.gif');
+    width:300px;
+    height:185px;
+    margin:auto;
+    text-align:center;
+    border: 2px solid black;
+}
+.Attaquer{
+  background-image: url('../img/monstres/spiderman.gif');
+  width:120px;
+  Height:120px;
+  opacity: 0.7;
+  display: inline-block;
+}
+
+.monsterStats{
+  background-color: rgba( 255 , 255 , 255 , 0.7);
+  border-radius: 5px;
+  display: inline-block;
+  text-align : left;
+  float:noneS;
+}
+@media (min-width: 720px){
+  .monsterStats{
+    float:left;
+  }
+}
+
+.disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn{
+  border-radius: 2px;
+  border: 1px solid #000000;
+}
+.btn-game{
+    margin: 2px;
+}
+.debug,
+.hidden{
+    display: none;
+}
+.button{
+    position: relative;
+    text-align: center;
+}
+
+.skills{
+  /*
+  position: absolute;
+  top: 50%; /* poussé de la moitié de hauteur du référent */
+  /*transform: translateY(-50%); /* tiré de la moitié de sa propre hauteur */
+}
+
+/*****************************Tooltip**Infobulles**************************************/
+/* Tooltip container */
+.tooltip{
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext{
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}

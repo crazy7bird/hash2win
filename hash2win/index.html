@@ -1,0 +1,163 @@
+<!-- Doctype HTML5 -->
+<!-- Test -->
+<!doctype html>
+<head>
+  <title>Hash2wiN</title>
+
+  <link rel="stylesheet" href="css/hash2win.css" />
+  <link rel="stylesheet" href="css/grid.css" />
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- Set character encoding for the document -->
+  <meta charset="utf-8">
+
+  <!-- Mobile Specific Metas–––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+  <!-- Meta Description -->
+  <meta name="description" content="Description of the page less than 150 characters">
+
+</head>
+
+<body class="global_wrapper">
+  <!-- Top div des monstre et du bouton click -->
+  <div class="Monster_wrapper gridMonster span6 box" id="">
+    <div class=" span2"><span id="changelog">IMNEW2</span></div>
+    <div class="monster span1" id="divmonster">
+        <button class="btn btn-game Attaquer" id="Attaquer"></button>
+    </div>
+    <div class="span2">
+      <div class="monsterStats ">
+        Name : <span id="namemonster">name</span> <br />
+        Num : <span id="nummonster">0</span> <br />
+        Life : <span id="monsterlife">0</span>/<span id="monstertotallife">0</span> HP <br />
+        Coins : <span id="monstercoins">0</span> $	<br />
+      </div>
+    </div>
+  </div>
+
+<!-- Boutons globals du jeu -->
+  <div class="button span6 box">
+      Coins: <span id="coins">0</span> / <span id="tcoins">0</span> <button class="btn debug" id="debug_10coins">x10</button>
+        <button class="btn debug" id="debug_nextmonster">Next_monster</button>
+        <button class="btn debug" id="debug_nextzone">Next_zone</button>
+        <button class="btn debug" id="db_Fire_p">F+</button>
+        <button class="btn debug" id="db_Fire_m">F-</button>
+        <button class="btn debug" id="db_Ice_p">G+</button>
+        <button class="btn debug" id="db_Ice_m">G-</button>
+    		<button class="btn btn-game" id="resetmonster" alt="Pour repartir du mob 1">Retourner au vilage</button>
+  </div>
+
+  <!-- Perso qui clique -->
+  <div class="gridClicker box span3" id="player">
+  	  Player : <br />
+      Total click: <span id="totalclick">0</span>
+      || Hold Click: <span id="holdclick">0.00</span>s
+      || Click Sec: <span id="clicksec">0</span>/s
+      || DPS: <span id="DPS_clicker">0</span>/s     <br />
+
+
+      <div class="tooltip"> <img  class ="btn btn-game" id="btn_lvl_player" src="img/skills/att.gif" height="5%" width="%" />
+       <span class="tooltiptext">Attaque :</br>
+         Niveau : <span id="lvl_player">1</span> </br>
+         PrixLvlUp :<span id="price_lvl_player">10</span> Coins </br>
+         "chaque niveau augmente les domages du click"
+       </span>
+     </div>
+
+      <div class="tooltip"> <img  class ="btn btn-game" id="btn_lvl_player_velocity" src="img/skills/Rage.gif" height="5%" width="%" />
+          <span class="tooltiptext">Rage :</br>
+            Niveau : <span id="lvl_player_velocity">0</span> </br>
+            PrixLvlUp :<span id="price_lvl_player_velocity">10</span> Coins </br>
+            "Les degats augmentes avec le nombre de click par secondes"
+          </span>
+      </div>
+      <div class="tooltip"> <img  class ="btn btn-game" id="btn_lvl_player_hold" src="img/skills/Concentration.gif" height="5%" width="%" />
+          <span class="tooltiptext">Concentration :</br>
+            Niveau : <span id="lvl_player_hold">0</span> </br>
+            PrixLvlUp :<span id="price_lvl_player_hold">10</span> Coins </br>
+            "Retenir son click permet de faire d'important degats"
+          </span>
+      </div>
+      <div class="tooltip">  <img  class ="btn btn-game" id="btn_lvl_player_crit_cha" src="img/skills/Chacrit.gif" height="5%" width="%" />
+          <span class="tooltiptext">Chance critique :</br>
+            Niveau : <span id="lvl_player_crit_cha">0</span>% </br>
+            PrixLvlUp :<span id="price_lvl_player_crit_cha">10</span> Coins </br>
+            "Chance de faire un coup critique"
+          </span>
+      </div>
+      <div class="tooltip"> <img  class ="btn btn-game" id="btn_lvl_player_crit_dmg" src="img/skills/Dmgcrit.gif" height="5%" width="%" />
+          <span class="tooltiptext">Dommages critiques :</br>
+            Niveau : <span id="lvl_player_crit_dmg">0</span></br>
+            PrixLvlUp :<span id="price_lvl_player_crit_dmg">10</span> Coins </br>
+            "Augmente les dommages critiques "
+          </span>
+      </div>
+      <div class="tooltip"> <img  class ="btn btn-game" id="btn_lvl_player_pietinement" src="img/skills/Piet.gif" height="5%" width="%" />
+          <span class="tooltiptext">Pietinement :</br>
+            Niveau : <span id="lvl_player_pietinement">0</span></br>
+            PrixLvlUp :<span id="price_lvl_player_pietinement">100</span> Coins </br>
+            "Le surplus de domage entame le monstre suivant "
+          </span>
+      </div>
+</div>
+
+<!--  Mashgicien  -->
+<div class="gridMashgicien box span3" id="mashgicien" >
+    mHashgicien : <br />
+   Hash Rate: <span id="hashrate">0</span>/s ||
+   Total Hash: <span id="totalhash">0</span> ||
+   DPS: <span id="DPS_mash">0</span>/s 	<br />
+
+
+  <div class="tooltip"> <img  class ="btn btn-game" id="btn_lvl_autobot" src="img/skills/mag.gif" height="5%" width="%" />
+      <span class="tooltiptext">Magie :</br>
+        Niveau : <span id="lvl_autobot">1</span></br>
+        PrixLvlUp :<span id="price_lvl_autobot">10</span> Coins </br>
+        "Domage magiques "
+      </span>
+  </div>
+  <div class="tooltip"> <img  class ="btn btn-game" id="btn_lvl_autobot_sagesse" src="img/skills/Sagesse.gif" height="5%" width="%" />
+      <span class="tooltiptext">Sagesse :</br>
+        Niveau : <span id="lvl_autobot_sagesse">0</span></br>
+        PrixLvlUp :<span id="price_lvl_autobot_sagesse">10</span> Coins </br>
+        "Domage magiques augmentent avec le temps "
+      </span>
+  </div>
+  <div class="tooltip"> <img  class ="btn btn-game" id="btn_lvl_autobot_coin" src="img/skills/dropcoin.gif" height="5%" width="%" />
+      <span class="tooltiptext">Main d'or :</br>
+        Niveau : <span id="lvl_autobot_coin">0</span></br>
+        PrixLvlUp :<span id="price_lvl_autobot_coin">10</span> Coins </br>
+        "Augmente les coins des drope des ennemis "
+      </span>
+  </div>
+  <div class="tooltip"> <img  class ="btn btn-game" id="btn_lvl_autobot_speed" src="img/skills/furie.gif" height="5%" width="%" />
+      <span class="tooltiptext">Furie :</br>
+        Niveau : <span id="lvl_autobot_speed">0</span></br>
+        PrixLvlUp :<span id="price_lvl_autobot_speed">100</span> Coins </br>
+        "Diminue le temps entre les degats, mais diminue les degats "
+      </span>
+  </div>
+</div>
+
+
+</body>
+<!--
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://crazybird.fr/turtle/config.js"></script>-->
+<script type="text/javascript" src="Js/Debug.js"></script>
+<script type="text/javascript" src="Js/Damages.js"></script>
+
+
+<script type="text/javascript" src="Js/BaseScript.js"></script>
+<script type="text/javascript" src="Js/Turtle.js"></script>
+
+<script type="text/javascript" src="Js/liste_zones.js"></script>
+<script type="text/javascript" src="Js/Zone.js"></script>
+
+<script type="text/javascript" src="Js/liste_monstres.js"></script>
+<script type="text/javascript" src="Js/Monsters.js"></script>
+
+
+<script type="text/javascript" src="Js/Clicker.js"></script>
+<script type="text/javascript" src="Js/mhashgicien.js"></script>
